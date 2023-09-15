@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex14</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        p{
+            background-color: lightgray;
+            text-align: center;
+        }
+        section{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .area-cores{
+            border: 2px solid;
+            width: fit-content;
+            height: fit-content;
+            padding: 10px;
+            display: flex;
+        }
+        .vermelho{
+            width: 200px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ff0000;
+            color: white;
+            margin: 5px;
+        }
+        .verde{
+            width: 200px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00ff00;
+            color: white;
+            margin: 5px;
+        }
+        .azul{
+            width: 200px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0000ff;
+            color: white;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>Exemplo</p>
+    <section>
+        <div class="area-cores">
+            <div class="vermelho">#ff0000</div>
+            <div class="verde">#00ff00</div>
+            <div class="azul">#0000ff</div>
+        </div>
+    </section>
+</body>
+</html>
