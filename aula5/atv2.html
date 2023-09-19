@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <h2>Calculo de aposentadoria</h2>
+
+    <form>
+        <label for="idade">Digite sua idade:</label>
+        <input type="number" name="idade" id="idade">
+        <button type="button" onclick="idadeAposentar()">Calcular</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+    function idadeAposentar() {
+        var idadepessoa = document.getElementById("idade").value;
+        var resultado = document.getElementById("resultado");
+        var idadefalta = 65 - parseInt(idadepessoa);
+
+        if (parseInt(idadepessoa) >= 65){
+            resultado.textContent = "Você já pode se aposentar"
+        } else {
+            resultado.textContent = "Faltam " + idadefalta + " anos para você se aposentar"
+        }
+    }
+    </script>
+</body>
+</html>

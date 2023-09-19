@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <h2>Verificação de aprovação</h2>
+
+    <form>
+        <label for="nota">Digite sua nota:</label>
+        <input type="number" name="nota1" id="nota1">
+        <label for="nota">Digite sua outra nota:</label>
+        <input type="number" name="nota2" id="nota2">
+        <button type="button" onclick="calcularAprovacao()">Calcular</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+    function calcularAprovacao(){
+        var nota1= document.getElementById("nota1").value;
+        var nota2= document.getElementById("nota2").value;
+        var media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
+        var resultado = document.getElementById("resultado");
+
+        if(media === 10){
+            resultado.textContent = "Aprovado com Distinção"
+        } else if (media >= 6){
+            resultado.textContent = "Aprovado"
+        } else {
+            resultado.textContent = "Reprovado" 
+        }
+    }
+    </script>
+</body>
+</html>
