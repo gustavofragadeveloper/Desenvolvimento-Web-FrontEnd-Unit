@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX04</title>
+    <style>
+        td{
+            height: 30px;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>Operações entre dois números</h3>
+
+    <label for="num1">Informe o primeiro valor:</label>
+    <input type="number" name="num1" id="num1"><br><br>
+    <label for="num2">Informe o segundo valor:</label>
+    <input type="number" name="num2" id="num2"><br><br>
+    <button type="button" onclick="realizaroperacoes()">Enviar</button><br><br>
+
+
+    <table border="2">
+        <tr>
+            <th>Operação</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td id="soma"></td>
+            <td id="resultsoma"></td>
+        </tr>
+        <tr>
+            <td id="multiplicacao"></td>
+            <td id="resultmultiplicacao"></td>
+        </tr>
+        <tr>
+            <td id="divisao"></td>
+            <td id="resultdivisao"></td>
+        </tr>
+        <tr>
+            <td id="resto"></td>
+            <td id="resultresto"></td>
+        </tr>
+    </table>
+    <script>
+        function realizaroperacoes(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let soma = document.getElementById("soma");
+            let resultsoma = document.getElementById("resultsoma");
+            let multiplicacao = document.getElementById("mulltiplicacao");
+            let resultmultiplicacao = document.getElementById("resultmultiplicacao");
+            let divisao = document.getElementById("divisao");
+            let resultdivisao = document.getElementById("resultdivisao");
+            let resto = document.getElementById("resto");
+            let resultresto = document.getElementById("resultresto");
+
+            soma.textContent = num1 + " + " + num2;
+            resultsoma.textContent = parseFloat(num1) + parseFloat(num2);
+            multiplicacao.textContent = num1 + " * " + num2;
+            resultmultiplicacao.textContent = parseFloat(num1) * parseFloat(num2);
+            divisao.textContent = num1 + " / " + num2;
+            resultdivisao.textContent = parseFloat(num1) / parseFloat(num2);
+            resto.textContent = num1 + " % " + num2;
+            resultresto.textContent = parseFloat(num1) % parseFloat(num2);
+
+           
+        }
+    </script>
+</body>
+</html>

@@ -4,88 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EX03</title>
+    <title>teste</title>
     <style>
-        .area-informacoes {
-            margin-top: 5px;
-            display: flex;
-            flex-direction: column;
 
+        div{
+            margin-bottom: 10px;
         }
 
-        .itens {
-            display: flex;
-            padding: 0;
-        }
-
-        p {
-            margin: 3px 0px 3px 0px;
-        }
-
-        
     </style>
 </head>
 
 <body>
-    <h3>Reajuste Salarial</h3>
-    <form>
-        <label for="salario-atual">Informe seu salário atual:</label>
-        <input type="text" name="salario-atual" id="salario-atual">
-        <button type="button" onclick="calcularreajuste()">Enviar</button>
-    </form>
-    <div class="area-informacoes">
-        <div class="itens">
-            <p>Salário antes do reajuste: &nbsp;
-            <p id="valor-salario-antes r"></p>
-            </p>
-        </div>
-        <div class="itens">
-            <p>Percentual do aumento aplicado: &nbsp;
-            <p id="percentual r"></p>
-            </p>
-        </div>
-        <div class="itens">
-            <p>valor do aumento: &nbsp;
-            <p id="valor r"></p>
-            </p>
-        </div>
-        <div class="itens">
-            <p>Novo salário, após o aumento: &nbsp;
-            <p id="salarionovo r"></p>
-            </p>
-        </div>
+    <h3>Reajuste salarial</h3>
+
+    <div>
+        <label for="salarioatual">Informe seu salário atual:</label>
+        <input type="number" name="salarioatual" id="salarioatual">
+        <button type="button" onclick="reajustesalarial()">Reajustar</button><br>
     </div>
+
+    <label>Salário antes do reajuste:</label>
+    <p id="salarioantes"></p>
+    <label for="">Percentual do aumento aplicado:</label>
+    <p id="percentual"></p>
+    <label for="">Valor do aumento</label>
+    <p id="valoraumento"></p>
+    <label for="">Novo salário após o aumento:</label>
+    <p id="novosalario"></p>
+
     <script>
-        function calcularreajuste() {
-            let salarioatual = document.getElementById("salario-atual r").value;
-            let valorsalarioantes = document.getElementById("valor-salario-antes r");
-            let percentual = document.getElementById("percentual r");
-            let valor = document.getElementById("valor r");
-            let salarionovo = document.getElementById("salarionovo r");
-            let porcentagemaumento = 0;
-            let valoraumento = salarioatual * (porcentagemaumento / 100);
-            let novosalario = salarioatual + valoraumento;
+        function reajustesalarial() {
+            let salarioatual = parseFloat(document.getElementById("salarioatual").value);
+            let salarioantes = document.getElementById("salarioantes");
+            let percentual = document.getElementById("percentual");
+            let valoraumento = document.getElementById("valoraumento");
+            let novosalario = document.getElementById("novosalario");
 
-            if (salarioatual <= 280){
-                porcentagemaumento = 20
+            salarioantes.textContent = salarioatual;
+
+            if (salarioatual <= 280) {
+                percentual.textContent = "20%";
+                valoraumento.textContent = (salarioatual * 0.20).toFixed(2);
             }
-            else if (salarioatual > 280 && salarioatual <= 700){
-                porcentagemaumento = 15 
+            else if (salarioatual > 280 && salarioatual <= 700) {
+                percentual.textContent = "15%";
+                valoraumento.textContent = (salarioatual * 0.15).toFixed(2);
             }
-            else if (salarioatual > 700 && salarioatual <= 1500){
-                porcentagemaumento = 10
+            else if (salarioatual > 700 && salarioatual <= 1500) {
+                percentual.textContent = "10%";
+                valoraumento.textContent = (salarioatual * 0.10).toFixed(2);
             }
-            else if (salarioatual > 1500){
-                porcentagemaumento = 5 
+            else if (salarioatual > 1500) {
+                percentual.textContent = "5%";
+                valoraumento.textContent = (salarioatual * 0.05).toFixed(2);
             }
-            
-            percentual.textContent = porcentagemaumento+ "%"
-        }
 
-
-
-
-
+            novosalario.textContent = (salarioatual + parseFloat(valoraumento.textContent)).toFixed(2);
+        };
     </script>
 </body>
 
