@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX04</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h3>Operações entre dois números</h3>
+
+    <label for="num1">Informe o primeiro valor:</label>
+    <input type="number" name="num1" id="num1"><br><br>
+    <label for="num2">Informe o segundo valor:</label>
+    <input type="number" name="num2" id="num2"><br><br>
+    <button type="button" onclick="realizaroperacoes()">Enviar</button><br><br>
+
+
+    <table border="2">
+        <tr>
+            <th>Operação</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td id="soma"></td>
+            <td id="resultsoma"></td>
+        </tr>
+        <tr>
+            <td id="multiplicacao"></td>
+            <td id="resultmultiplicacao"></td>
+        </tr>
+        <tr>
+            <td id="divisao"></td>
+            <td id="resultdivisao"></td>
+        </tr>
+        <tr>
+            <td id="resto"></td>
+            <td id="resultresto"></td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
