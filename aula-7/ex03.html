@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valores Pares em um Array</title>
+</head>
+<body>
+  <h1>Valores Pares em um Array</h1>
+
+  <form id="inputForm">
+    <label for="valor">Insira um valor:</label>
+    <input type="number" id="valor" name="valor">
+    <input type="submit" value="Adicionar Valor">
+  </form>
+
+  <h2>Valores Pares Inseridos:</h2>
+  <ul id="valoresParesList"></ul>
+
+  <script>
+    const valores = [];
+    const inputForm = document.getElementById("inputForm");
+    const inputValor = document.getElementById("valor");
+    const valoresParesList = document.getElementById("valoresParesList");
+
+    inputForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const valor = parseInt(inputValor.value);
+
+      if (!isNaN(valor)) {
+        valores.push(valor);
+        inputValor.value = "";
+        inputValor.focus();
+      } else {
+        alert("Por favor, digite um valor numérico.");
+      }
+    });
+
+    function atualizarListaValoresPares() {
+      valoresParesList.innerHTML = ""; // Limpar a lista anterior.
+
+      for (let i = 0; i < valores.length; i++) {
+        if (valores[i] % 2 === 0) {
+          const li = document.createElement("li");
+          li.textContent = valores[i];
+          valoresParesList.appendChild(li);
+        }
+      }
+    }
+
+    inputForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      atualizarListaValoresPares();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exibição de Valores em uma Array</title>
+</head>
+<body>
+  <h1>Valores na Array</h1>
+
+  <p>Valores na Array:</p>
+  <ul id="valoresList"></ul>
+
+  <script>
+    // Declara uma matriz com 10 elementos.
+    const valores = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+    // Obtém a lista onde os valores serão exibidos.
+    const valoresList = document.getElementById("valoresList");
+
+    // Loop "for" para adicionar os valores à lista.
+    for (let i = 0; i < valores.length; i++) {
+      const li = document.createElement("li");
+      li.textContent = `Valor na posição ${i}: ${valores[i]}`;
+      valoresList.appendChild(li);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alterar Cor do Botão</title>
+</head>
+<body>
+  <h1>Alterar Cor do Botão</h1>
+
+  <button id="colorButton" onclick="mudarCor()">Clique para Mudar a Cor</button>
+
+  <script>
+    const cores = ["red", "blue", "green", "orange", "purple"];
+    let corIndex = 0;
+
+    function mudarCor() {
+      const colorButton = document.getElementById("colorButton");
+      colorButton.style.backgroundColor = cores[corIndex];
+      corIndex = (corIndex + 1) % cores.length;
+    }
+  </script>
+</body>
+</html>

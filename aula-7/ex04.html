@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soma de 10 Valores com Loop While</title>
+</head>
+<body>
+  <h1>Soma de 10 Valores com Loop While</h1>
+
+  <form id="inputForm">
+    <label for="valor">Digite um valor:</label>
+    <input type="number" id="valor" name="valor">
+    <input type="submit" value="Adicionar Valor">
+  </form>
+
+  <p id="valoresInseridos"></p>
+  <p id="soma"></p>
+
+  <script>
+    let valores = [];
+    let soma = 0;
+    let contador = 0;
+    const inputForm = document.getElementById("inputForm");
+    const inputValor = document.getElementById("valor");
+    const valoresInseridos = document.getElementById("valoresInseridos");
+    const pSoma = document.getElementById("soma");
+
+    inputForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const valor = parseFloat(inputValor.value);
+
+      if (!isNaN(valor)) {
+        valores.push(valor);
+        inputValor.value = "";
+        contador++;
+
+        if (contador === 10) {
+          exibirSoma();
+        } else {
+          const valoresText = `Valores Inseridos: ${contador} de 10`;
+          valoresInseridos.textContent = valoresText;
+        }
+      } else {
+        alert("Por favor, digite um valor numérico.");
+      }
+    });
+
+    function exibirSoma() {
+      for (let i = 0; i < valores.length; i++) {
+        soma += valores[i];
+      }
+      pSoma.textContent = `A soma dos 10 valores é: ${soma}`;
+    }
+  </script>
+</body>
+</html>

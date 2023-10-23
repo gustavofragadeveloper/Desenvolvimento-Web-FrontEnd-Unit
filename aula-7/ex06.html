@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Somatório de 20 Valores com While</title>
+</head>
+<body>
+  <h1>Somatório de 20 Valores com While</h1>
+
+  <p>Insira 20 valores reais:</p>
+
+  <form id="inputForm">
+    <label for="valor">Digite um valor:</label>
+    <input type="number" id="valor" name="valor" step="0.01">
+    <input type="submit" value="Adicionar Valor">
+  </form>
+
+  <p id="valoresInseridos"></p>
+  <p id="soma"></p>
+
+  <script>
+    let soma = 0;
+    let contador = 0;
+    const inputForm = document.getElementById("inputForm");
+    const inputValor = document.getElementById("valor");
+    const valoresInseridos = document.getElementById("valoresInseridos");
+    const pSoma = document.getElementById("soma");
+
+    inputForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const valor = parseFloat(inputValor.value);
+
+      if (!isNaN(valor)) {
+        soma += valor;
+        contador++;
+
+        if (contador < 20) {
+          const valoresText = `Valores Inseridos: ${contador} de 20`;
+          valoresInseridos.textContent = valoresText;
+        } else if (contador === 20) {
+          exibirSoma();
+        }
+
+        inputValor.value = "";
+      } else {
+        alert("Por favor, digite um valor real.");
+      }
+    });
+
+    function exibirSoma() {
+      pSoma.textContent = `O somatório dos 20 valores é: ${soma}`;
+    }
+  </script>
+</body>
+</html>
